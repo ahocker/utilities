@@ -14,7 +14,7 @@ set /P brightness=Please enter desired display brightness (0-100%%): %=%
 powercfg -SetAcValueIndex SCHEME_CURRENT SUB_VIDEO %displayBrightness% %brightness%
 
 : Set DC (battery) brightness value
-:powercfg -SetDcValueIndex %powerScheme% %dsply% %displayBrightness% %brightness%
+:powercfg -SetDcValueIndex SCHEME_CURRENT SUB_VIDEO %displayBrightness% %brightness%
 
 : Reset current power scheme to the one we've just edited (refresh for Windows' sake)
-powercfg -S %powerScheme%
+powercfg -S SCHEME_CURRENT
